@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class JavaConfig {
-    @ConditionalOnProperty(name = "profile.dev", havingValue = "true")
+    @ConditionalOnProperty(name = "profile.dev", havingValue = "true", matchIfMissing = "true")
     @Bean
     public SystemProfile devProfile() {
         return new DevProfile();
